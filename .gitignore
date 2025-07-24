@@ -70,3 +70,29 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# IDE Settings
+.vscode/
+*.vsconfig
+
+# Your specific build folders
+New folder/
+New folder (2)/
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+
+# WebGL builds (if you create organized build folders later)
+WebGL-Build/
+Builds/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

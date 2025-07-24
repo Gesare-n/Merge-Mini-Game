@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3866dd9f0a525d44792e479edf40f7d6
+guid: 114c8038e44fa71478541fb3a37a4271
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -724105580326358498
-    second: pineapple_0
+      213: -517798619741489267
+    second: kiondo basket_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pineapple_0
+      name: kiondo basket_0
       rect:
         serializedVersion: 2
-        x: 227
-        y: 161
-        width: 914
-        height: 1724
+        x: 62
+        y: 390
+        width: 1199
+        height: 1132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e12f4c8afc573f5f0800000000000000
-      internalID: -724105580326358498
+      spriteID: d87fe1516e860d8f0800000000000000
+      internalID: -517798619741489267
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pineapple_0: -724105580326358498
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

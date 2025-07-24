@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3866dd9f0a525d44792e479edf40f7d6
+guid: 3e10d66dc8ea0b14f8f8657723b3ab2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -724105580326358498
-    second: pineapple_0
+      213: 5855060557173151529
+    second: Avocado_Sprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pineapple_0
+      name: Avocado_Sprite_0
       rect:
         serializedVersion: 2
-        x: 227
-        y: 161
-        width: 914
-        height: 1724
+        x: 82
+        y: 227
+        width: 1112
+        height: 882
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e12f4c8afc573f5f0800000000000000
-      internalID: -724105580326358498
+      spriteID: 927d4b82e8a514150800000000000000
+      internalID: 5855060557173151529
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pineapple_0: -724105580326358498
+      Avocado_Sprite_0: 5855060557173151529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

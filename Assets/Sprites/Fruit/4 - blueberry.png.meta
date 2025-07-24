@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3866dd9f0a525d44792e479edf40f7d6
+guid: 41a4fe5220992a34799416d6b59813a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -724105580326358498
-    second: pineapple_0
+      213: -2597560040834037159
+    second: Blueberry_Sprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pineapple_0
+      name: Blueberry_Sprite_0
       rect:
         serializedVersion: 2
-        x: 227
-        y: 161
-        width: 914
-        height: 1724
+        x: 133
+        y: 98
+        width: 1054
+        height: 1084
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e12f4c8afc573f5f0800000000000000
-      internalID: -724105580326358498
+      spriteID: 95a8653c7ec93fbd0800000000000000
+      internalID: -2597560040834037159
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pineapple_0: -724105580326358498
+      Blueberry_Sprite_0: -2597560040834037159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
