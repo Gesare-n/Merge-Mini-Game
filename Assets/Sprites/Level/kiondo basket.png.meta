@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      kiondo basket_0: -517798619741489267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
