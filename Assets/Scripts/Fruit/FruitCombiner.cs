@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class FruitCombiner : MonoBehaviour
 {
+    public static FruitCombiner Instance{ set; get; }
     private int _layerIndex;
 
     private FruitInfo _info;
+    public Vector3 collisionPosition;
 
     private void Awake()
     {
+        Instance = this;
         _info = GetComponent<FruitInfo>();
         _layerIndex = gameObject.layer;
     }
@@ -30,10 +33,12 @@ public class FruitCombiner : MonoBehaviour
                     {
                         GameManager.instance.IncreaseScore(_info.PointsWhenAnnihilated);
 
-                        if (_info.FruitIndex == FruitSelector.instance.Fruits.Length -1)
+                        if (_info.FruitIndex == FruitSelector.instance.Fruits.Length - 1)
                         {
                             Destroy(collision.gameObject);
                             Destroy(gameObject);
+                            //gets collision position
+                            collisionPosition = collision.transform.position;
                         }
 
                         else

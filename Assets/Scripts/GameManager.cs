@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScore(int amount)
     {
+        VisualFeedback.Instance.ShowTextVisuals(amount);
         CurrentScore += amount;
         _scoreText.text = CurrentScore.ToString("0");
     }
