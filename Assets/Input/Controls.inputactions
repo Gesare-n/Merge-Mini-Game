@@ -18,7 +18,7 @@
                     "name": "Throw",
                     "type": "Button",
                     "id": "adf48c0b-b28c-4f57-9733-9986871c12c6",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -192,6 +192,17 @@
                 },
                 {
                     "name": "",
+                    "id": "57a5f595-e2bd-43f6-a406-04aeb03afcf4",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e9b20f1a-2ac7-41b1-9d3e-f06b57dcccc9",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -205,6 +216,17 @@
                     "name": "",
                     "id": "b1b94c2b-eb16-48e2-b9cc-fceb00e10d1d",
                     "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "733cf2b9-6bff-43c3-b3e2-41952d7d2d22",
+                    "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
