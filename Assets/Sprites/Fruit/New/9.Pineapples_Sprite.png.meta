@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      9.Pineapples_Sprite_0: -8368166451383211732
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
