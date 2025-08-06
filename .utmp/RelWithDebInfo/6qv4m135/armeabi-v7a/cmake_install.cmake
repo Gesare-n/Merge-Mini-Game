@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/digit/OneDrive/Jobs/GameUpElite/7.Merge Game Project/Merge-Mini-Game/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/main/cpp
+# Install script for directory: C:/Users/digit/OneDrive/Jobs/GameUpElite/7.Merge Game Project/Merge-Mini-Game/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
