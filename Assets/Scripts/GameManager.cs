@@ -16,9 +16,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timeText;
     [SerializeField] private Image _gameOverPanel;
     [SerializeField] private float _fadeTime = 2f;
-    [SerializeField] private int _levelTime = 60;
 
     public float TimeTillGameOver = 1.5f;
+
+    [Header("Level Settings")]
+    public int timeLimit = 60;
+
+    [Tooltip("Choose a number that is less than the avialable number of fruits in the game.")]
+    public int highestFruitIndex = 10;
 
     private void OnEnable()
     {
@@ -39,7 +44,7 @@ public class GameManager : MonoBehaviour
 
         //_scoreText.text = CurrentScore.ToString("0");
 
-        CurrentTime = _levelTime;
+        CurrentTime = timeLimit;
         int minutes = CurrentTime / 60;
         int seconds = CurrentTime % 60;
         _timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);

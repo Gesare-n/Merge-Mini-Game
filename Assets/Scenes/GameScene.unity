@@ -3522,8 +3522,9 @@ MonoBehaviour:
   _timeText: {fileID: 34072734}
   _gameOverPanel: {fileID: 1781176519}
   _fadeTime: 2
-  _levelTime: 60
   TimeTillGameOver: 1.5
+  timeLimit: 60
+  highestFruitIndex: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
