@@ -21,16 +21,15 @@ public class FruitCombiner : MonoBehaviour
             FruitInfo info = collision.gameObject.GetComponent<FruitInfo>();
             if (info != null)
             {
-                if (info.FruitIndex == _info.FruitIndex)
+                if (info.FruitIndex == _info.FruitIndex )
                 {
                     int thisID = gameObject.GetInstanceID();
                     int otherID = collision.gameObject.GetInstanceID();
 
                     if (thisID > otherID)
                     {
-                        //GameManager.instance.IncreaseScore(_info.PointsWhenAnnihilated);
-
-                        if (_info.FruitIndex == FruitSelector.instance.Fruits.Length -1)
+                        // If highest fruit tier is reached, destroy both fruit instead of merging them
+                        if (_info.FruitIndex == FruitSelector.instance.Fruits.Length -1 || _info.FruitIndex >= GameManager.instance.highestFruitIndex)
                         {
                             Destroy(collision.gameObject);
                             Destroy(gameObject);
