@@ -35,6 +35,13 @@ public class FruitSelector : MonoBehaviour
 
     public GameObject PickRandomFruitForThrow()
     {
+        // Ensure Fruit selected is one among these allowed in the level.
+        // Additionally, highest allowed fruit can't be spawned - player needs at least one merge to reach it.
+        if (HighestStartingIndex > GameManager.instance.highestFruitIndex)
+        {
+            HighestStartingIndex = GameManager.instance.highestFruitIndex - 1;
+        }
+
         int randomIndex = Random.Range(0, HighestStartingIndex + 1);
 
         if (randomIndex < NoPhysicsFruits.Length)
@@ -48,6 +55,11 @@ public class FruitSelector : MonoBehaviour
 
     public void PickNextFruit()
     {
+        if (HighestStartingIndex > GameManager.instance.highestFruitIndex)
+        {
+            HighestStartingIndex = GameManager.instance.highestFruitIndex - 1;
+        }
+
         int randomIndex = Random.Range(0, HighestStartingIndex + 1);
 
         if (randomIndex < Fruits.Length)
