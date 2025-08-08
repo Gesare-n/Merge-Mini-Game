@@ -44,12 +44,14 @@ public class ThrowFruitController : MonoBehaviour
     {
         if (UserInput.hasTouch)
         {
+            // Fruit moves horizontally
             Vector3 currentPos = _fruitTransform.position;
             float newX = Mathf.MoveTowards(currentPos.x, UserInput.targetX, _moveSpeed * Time.deltaTime);
             _fruitTransform.position = new Vector3(newX, currentPos.y, currentPos.z);
 
             if (Mathf.Approximately(newX, UserInput.targetX))
-            {
+            {   
+                // Once fruit reaches touch x postion, it falls
                 UserInput.hasTouch = false;
                 if (CanThrow && !UserInput.hasTouch)
                 {
