@@ -8,10 +8,15 @@ public class FruitCombiner : MonoBehaviour
 
     private FruitInfo _info;
 
+    public Vector2 collisionPoint;
+    public int oldFruitIndex;
+    public static FruitCombiner Instance { set; get; }
+
     private void Awake()
     {
         _info = GetComponent<FruitInfo>();
         _layerIndex = gameObject.layer;
+        Instance = this;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -19,6 +24,8 @@ public class FruitCombiner : MonoBehaviour
         if (collision.gameObject.layer == _layerIndex)
         {
             FruitInfo info = collision.gameObject.GetComponent<FruitInfo>();
+            // Get the first contact point
+            collisionPoint = collision.GetContact(0).point;
             if (info != null)
             {
                 if (info.FruitIndex == _info.FruitIndex )
@@ -28,6 +35,9 @@ public class FruitCombiner : MonoBehaviour
 
                     if (thisID > otherID)
                     {
+                        VisualFeedback.Instance.ShowAddedScore(_info.PointsWhenAnnihilated);
+                        VisualFeedback.Instance.ShowMergeEffects();
+                        VisualFeedback.Instance.AudioEffects();
                         // If highest fruit tier is reached, destroy both fruit instead of merging them
                         if (_info.FruitIndex == FruitSelector.instance.Fruits.Length -1 || _info.FruitIndex >= GameManager.instance.highestFruitIndex)
                         {
