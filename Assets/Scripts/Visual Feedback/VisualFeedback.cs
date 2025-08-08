@@ -27,6 +27,7 @@ public class VisualFeedback : MonoBehaviour
         // Particle 1
         GameObject instance1 = Instantiate(oldFruitPrefab, FruitCombiner.Instance.collisionPoint, Quaternion.identity, transform);
         ParticleSystem particle1 = instance1.GetComponent<ParticleSystem>();
+        /*
         GameObject fruitPrefab1 = FruitSelector.instance.Fruits[ThrowFruitController.instance.currentFruitIndex];
         Sprite chosenSprite1 = fruitPrefab1.GetComponent<SpriteRenderer>().sprite;
         var textureSheet1 = particle1.textureSheetAnimation;
@@ -37,20 +38,24 @@ public class VisualFeedback : MonoBehaviour
             textureSheet1.RemoveSprite(0); // Clear existing
         }
         textureSheet1.AddSprite(chosenSprite1);
+        */
         particle1.Play();
 
         // particle 2
         GameObject instance2 = Instantiate(newFruitPrefab, FruitCombiner.Instance.collisionPoint, Quaternion.identity, transform);
         ParticleSystem particle2 = instance2.GetComponent<ParticleSystem>();
+        /*
         GameObject fruitPrefab2 = FruitSelector.instance.Fruits[ThrowFruitController.instance.currentFruitIndex];
         Sprite chosenSprite2 = fruitPrefab2.GetComponent<SpriteRenderer>().sprite;
         var texturesheet2 = particle2.textureSheetAnimation;
         texturesheet2.mode = ParticleSystemAnimationMode.Sprites;
+        // Clear old sprites and add the new one
         if (texturesheet2.spriteCount > 0)
         {
             texturesheet2.RemoveSprite(0);
         }
         texturesheet2.AddSprite(chosenSprite2);
+        */
         particle2.Play();
     }
     public void AudioEffects()
