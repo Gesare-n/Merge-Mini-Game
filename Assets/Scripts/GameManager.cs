@@ -57,18 +57,12 @@ public class GameManager : MonoBehaviour
     //    CurrentScore += amount;
     //    _scoreText.text = CurrentScore.ToString("0");
     //}
-    private void Start()
-    {
-        if (isGameAcitve)
-        {
-            StartCoroutine(UpdateTime());
-        }
-    }
+
 
     public void StartGame()
     {
         isGameAcitve=true;
-
+        StartCoroutine(UpdateTime());
     }
 
     IEnumerator UpdateTime()
