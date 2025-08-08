@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image _gameOverPanel;
     [SerializeField] private float _fadeTime = 2f;
 
+    public bool isGameAcitve = false;
+
     public float TimeTillGameOver = 1.5f;
 
     [Header("Level Settings")]
@@ -48,8 +50,6 @@ public class GameManager : MonoBehaviour
         int minutes = CurrentTime / 60;
         int seconds = CurrentTime % 60;
         _timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-        StartCoroutine(UpdateTime());
     }
 
     //public void IncreaseScore(int amount)
@@ -57,6 +57,19 @@ public class GameManager : MonoBehaviour
     //    CurrentScore += amount;
     //    _scoreText.text = CurrentScore.ToString("0");
     //}
+    private void Start()
+    {
+        if (isGameAcitve)
+        {
+            StartCoroutine(UpdateTime());
+        }
+    }
+
+    public void StartGame()
+    {
+        isGameAcitve=true;
+
+    }
 
     IEnumerator UpdateTime()
     {
@@ -77,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        isGameAcitve = false;   
         StartCoroutine(ResetGame());
     }
 

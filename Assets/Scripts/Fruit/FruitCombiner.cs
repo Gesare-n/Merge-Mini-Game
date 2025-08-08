@@ -39,12 +39,15 @@ public class FruitCombiner : MonoBehaviour
                         VisualFeedback.Instance.ShowMergeEffects();
                         VisualFeedback.Instance.AudioEffects();
                         // If highest fruit tier is reached, destroy both fruit instead of merging them
-                        if (_info.FruitIndex == FruitSelector.instance.Fruits.Length -1 || _info.FruitIndex >= GameManager.instance.highestFruitIndex)
+                        if (_info.FruitIndex == GameManager.instance.highestFruitIndex - 1)
+                        {
+                            GameManager.instance.isGameAcitve = false;
+                        }
+                        else if (_info.FruitIndex == FruitSelector.instance.Fruits.Length -1 || _info.FruitIndex >= GameManager.instance.highestFruitIndex)
                         {
                             Destroy(collision.gameObject);
                             Destroy(gameObject);
                         }
-
                         else
                         {
                             Vector3 middlePosition = (transform.position + collision.transform.position) / 2f;

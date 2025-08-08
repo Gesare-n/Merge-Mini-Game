@@ -35,7 +35,7 @@ public class UserInput : MonoBehaviour
 
     public void OnTouchPosition(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && GameManager.instance.isGameAcitve)
         {
             Vector2 touchPos = context.ReadValue<Vector2>();
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(touchPos.x, touchPos.y, 0f));
