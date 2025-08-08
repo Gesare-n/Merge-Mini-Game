@@ -13,12 +13,21 @@ public class ThrowFruitController : MonoBehaviour
     [SerializeField] private FruitSelector _selector;
     [SerializeField] private float _moveSpeed = 5f;
 
-    private PlayerController _playerController;
+    [SerializeField] private BoxCollider2D _boundaries;
 
-    private Rigidbody2D _rb;
+    private float _leftBound;
+    private float _rightBound;
+    private float _startingLeftBound;
+    private float _startingRightBound;
+
+    //private PlayerController _playerController;
+
+    //private Rigidbody2D _rb;
     private CircleCollider2D _circleCollider;
 
     public Bounds Bounds { get; private set; }
+
+    private Bounds _bounds;
 
     private const float EXTRA_WIDTH = 0.03f;
 
@@ -31,11 +40,19 @@ public class ThrowFruitController : MonoBehaviour
         {
             instance = this;
         }
+
+        _bounds = _boundaries.bounds;
+
+        _leftBound = _bounds.min.x;
+        _rightBound = _bounds.max.x;
+
+        _startingLeftBound = _leftBound;
+        _startingRightBound = _rightBound;
     }
 
     private void Start()
     {
-        _playerController = GetComponent<PlayerController>();
+        //_playerController = GetComponent<PlayerController>();
 
         SpawnAFruit(_selector.PickRandomFruitForThrow());
     }
@@ -44,6 +61,8 @@ public class ThrowFruitController : MonoBehaviour
     {
         if (UserInput.hasTouch)
         {
+            UserInput.targetX = Mathf.Clamp(UserInput.targetX, _leftBound, _rightBound);
+
             Vector3 currentPos = _fruitTransform.position;
             float newX = Mathf.MoveTowards(currentPos.x, UserInput.targetX, _moveSpeed * Time.deltaTime);
             _fruitTransform.position = new Vector3(newX, currentPos.y, currentPos.z);
@@ -64,10 +83,7 @@ public class ThrowFruitController : MonoBehaviour
                     CanThrow = false;
                 }
             }
-               
         }
-
-
     }
 
     public void SpawnAFruit(GameObject fruit)
@@ -77,6 +93,15 @@ public class ThrowFruitController : MonoBehaviour
         _circleCollider = CurrentFruit.GetComponent<CircleCollider2D>();
         Bounds = _circleCollider.bounds;
 
-        _playerController.ChangeBoundary(EXTRA_WIDTH);
+        ChangeBoundary(EXTRA_WIDTH);
+    }
+
+    public void ChangeBoundary(float extraWidth)
+    {
+        _leftBound = _startingLeftBound;
+        _rightBound = _startingRightBound;
+
+        _leftBound += Bounds.extents.x + extraWidth;
+        _rightBound -= Bounds.extents.x + extraWidth;
     }
 }

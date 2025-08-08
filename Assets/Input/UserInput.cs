@@ -6,31 +6,33 @@ using static UnityEngine.GraphicsBuffer;
 
 public class UserInput : MonoBehaviour
 {
-    public PlayerInput playerInput;
+    //public PlayerInput playerInput;
 
-    public static Vector2 MoveInput { get; set; }
+    //public static Vector2 MoveInput { get; set; }
 
-    public static bool IsThrowPressed { get; set; }
+    //public static bool IsThrowPressed { get; set; }
+
+    //private InputAction _moveAction;
+    //private InputAction _throwAction;
+
     public static bool hasTouch { get; set; }
     public static float targetX { get; set; }
 
-    private InputAction _moveAction;
-    private InputAction _throwAction;
+    //private void Awake()
+    //{
+    //    playerInput = GetComponent<PlayerInput>();
 
-    private void Awake()
-    {
-        playerInput = GetComponent<PlayerInput>();
+    //    _moveAction = playerInput.actions["Move"];
+    //    _throwAction = playerInput.actions["Throw"];
+    //}
 
-        _moveAction = playerInput.actions["Move"];
-        _throwAction = playerInput.actions["Throw"];
-    }
+    //private void Update()
+    //{
+    //    MoveInput = _moveAction.ReadValue<Vector2>();
 
-    private void Update()
-    {
-        MoveInput = _moveAction.ReadValue<Vector2>();
+    //    IsThrowPressed = _throwAction.WasPressedThisFrame();
+    //}
 
-        IsThrowPressed = _throwAction.WasPressedThisFrame();
-    }
     public void OnTouchPosition(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -41,6 +43,4 @@ public class UserInput : MonoBehaviour
             hasTouch = true;
         }
     }
-
-
 }
