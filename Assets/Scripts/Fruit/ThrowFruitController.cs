@@ -68,8 +68,6 @@ public class ThrowFruitController : MonoBehaviour
             }
                
         }
-
-
     }
 
     public void SpawnAFruit(GameObject fruit)
@@ -80,5 +78,17 @@ public class ThrowFruitController : MonoBehaviour
         Bounds = _circleCollider.bounds;
 
         _playerController.ChangeBoundary(EXTRA_WIDTH);
+    }
+
+    public int currentFruitIndex
+    {
+        get
+        {
+            if (CurrentFruit != null && CurrentFruit.TryGetComponent(out SpriteIndex spriteIndex))
+            {
+                return spriteIndex.Index;
+            }
+            return -1; // return -1 if there's no fruit
+        }
     }
 }
