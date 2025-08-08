@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class ThrowFruitController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ThrowFruitController : MonoBehaviour
     [SerializeField] private Transform _fruitTransform;
     [SerializeField] private Transform _parentAfterThrow;
     [SerializeField] private FruitSelector _selector;
+    [SerializeField] private float _moveSpeed = 5f;
 
     private PlayerController _playerController;
 
@@ -40,18 +42,32 @@ public class ThrowFruitController : MonoBehaviour
 
     private void Update()
     {
-        if (UserInput.IsThrowPressed && CanThrow)
+        if (UserInput.hasTouch)
         {
-            SpriteIndex index = CurrentFruit.GetComponent<SpriteIndex>();
-            Quaternion rot = CurrentFruit.transform.rotation;
+            Vector3 currentPos = _fruitTransform.position;
+            float newX = Mathf.MoveTowards(currentPos.x, UserInput.targetX, _moveSpeed * Time.deltaTime);
+            _fruitTransform.position = new Vector3(newX, currentPos.y, currentPos.z);
 
-            GameObject go = Instantiate(FruitSelector.instance.Fruits[index.Index], CurrentFruit.transform.position, rot);
-            go.transform.SetParent(_parentAfterThrow);
+            if (Mathf.Approximately(newX, UserInput.targetX))
+            {
+                UserInput.hasTouch = false;
+                if (CanThrow && !UserInput.hasTouch)
+                {
+                    SpriteIndex index = CurrentFruit.GetComponent<SpriteIndex>();
+                    Quaternion rot = CurrentFruit.transform.rotation;
 
-            Destroy(CurrentFruit);
+                    GameObject go = Instantiate(FruitSelector.instance.Fruits[index.Index], CurrentFruit.transform.position, rot);
+                    go.transform.SetParent(_parentAfterThrow);
 
-            CanThrow = false;
+                    Destroy(CurrentFruit);
+
+                    CanThrow = false;
+                }
+            }
+               
         }
+
+
     }
 
     public void SpawnAFruit(GameObject fruit)

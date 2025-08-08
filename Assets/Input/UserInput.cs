@@ -2,24 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.GraphicsBuffer;
 
 public class UserInput : MonoBehaviour
 {
-    public static PlayerInput PlayerInput;
+    public PlayerInput playerInput;
 
     public static Vector2 MoveInput { get; set; }
 
     public static bool IsThrowPressed { get; set; }
+    public static bool hasTouch { get; set; }
+    public static float targetX { get; set; }
 
     private InputAction _moveAction;
     private InputAction _throwAction;
 
     private void Awake()
     {
-        PlayerInput = GetComponent<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();
 
-        _moveAction = PlayerInput.actions["Move"];
-        _throwAction = PlayerInput.actions["Throw"];
+        _moveAction = playerInput.actions["Move"];
+        _throwAction = playerInput.actions["Throw"];
     }
 
     private void Update()
@@ -28,4 +31,16 @@ public class UserInput : MonoBehaviour
 
         IsThrowPressed = _throwAction.WasPressedThisFrame();
     }
+    public void OnTouchPosition(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Vector2 touchPos = context.ReadValue<Vector2>();
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(touchPos.x, touchPos.y, 0f));
+            targetX = worldPos.x;
+            hasTouch = true;
+        }
+    }
+
+
 }

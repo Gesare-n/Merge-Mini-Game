@@ -1254,6 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe69cc3b2a6b39444bdc1879c9568e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
 --- !u!114 &904464436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1267,7 +1268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 6d52db0d982e61e4f903f7202d7e7766, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -1278,7 +1279,31 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8076c9b5-d290-47ad-acf4-2702e5f6cc6e
+    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Touchscreen/delta]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: adf48c0b-b28c-4f57-9733-9986871c12c6
+    m_ActionName: 'Player/Throw[/Keyboard/space,/Touchscreen/primaryTouch/tap]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 904464435}
+        m_TargetAssemblyTypeName: UserInput, Assembly-CSharp
+        m_MethodName: OnTouchPosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 82f7b977-69ed-44ea-a888-6e29b1ad2843
+    m_ActionName: 'Player/TouchPosition[/Touchscreen/primaryTouch/position]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2897,7 +2922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1931854581
 Transform:
   m_ObjectHideFlags: 0
@@ -3279,7 +3304,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077230333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a995816ce4cc594f9daaa31e110cb00, type: 3}
   m_Name: 
@@ -3294,7 +3319,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077230333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3423,6 +3448,7 @@ MonoBehaviour:
   _fruitTransform: {fileID: 161130896}
   _parentAfterThrow: {fileID: 2097197016}
   _selector: {fileID: 2097197017}
+  _moveSpeed: 15
 --- !u!1 &2097197015
 GameObject:
   m_ObjectHideFlags: 0
