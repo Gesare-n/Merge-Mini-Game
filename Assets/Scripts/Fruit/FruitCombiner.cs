@@ -7,11 +7,15 @@ public class FruitCombiner : MonoBehaviour
     private int _layerIndex;
 
     private FruitInfo _info;
+    public Vector2 collisionPoint;
+    public int oldFruitIndex;
+    public static FruitCombiner Instance { set; get; }
 
     private void Awake()
     {
         _info = GetComponent<FruitInfo>();
         _layerIndex = gameObject.layer;
+        Instance = this;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -19,6 +23,8 @@ public class FruitCombiner : MonoBehaviour
         if (collision.gameObject.layer == _layerIndex)
         {
             FruitInfo info = collision.gameObject.GetComponent<FruitInfo>();
+            // Get the first contact point
+            collisionPoint = collision.GetContact(0).point;
             if (info != null)
             {
                 if (info.FruitIndex == _info.FruitIndex)
@@ -29,8 +35,10 @@ public class FruitCombiner : MonoBehaviour
                     if (thisID > otherID)
                     {
                         GameManager.instance.IncreaseScore(_info.PointsWhenAnnihilated);
-
-                        if (_info.FruitIndex == FruitSelector.instance.Fruits.Length -1)
+                        VisualFeedback.Instance.ShowAddedScore(_info.PointsWhenAnnihilated);
+                        VisualFeedback.Instance.ShowMergeEffects();
+                        VisualFeedback.Instance.AudioEffects();
+                        if (_info.FruitIndex == FruitSelector.instance.Fruits.Length - 1)
                         {
                             Destroy(collision.gameObject);
                             Destroy(gameObject);
