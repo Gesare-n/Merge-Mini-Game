@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class SpriteIndex : MonoBehaviour
 {
+    //fruit index
     public int Index = 0;
 }
