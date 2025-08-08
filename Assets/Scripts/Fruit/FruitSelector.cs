@@ -12,7 +12,7 @@ public class FruitSelector : MonoBehaviour
     public int HighestStartingIndex = 3;
 
     [SerializeField] private Image _nextFruitImage;
-    public Sprite[] _fruitSprites;
+    [SerializeField] private Sprite[] _fruitSprites;
 
     public GameObject NextFruit { get; private set; }
 
@@ -27,10 +27,6 @@ public class FruitSelector : MonoBehaviour
     private void Start()
     {
         PickNextFruit();
-    }
-    void Update()
-    {
-        
     }
 
     public GameObject PickRandomFruitForThrow()

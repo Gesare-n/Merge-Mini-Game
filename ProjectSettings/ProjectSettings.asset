@@ -164,7 +164,6 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.MalyioGames.MergeSafari
-    Standalone: com.Malyio-Games.Merge-Safari
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -821,7 +820,6 @@ PlayerSettings:
     PS4: 1
     PS5: 1
     Stadia: 1
-    Standalone: 1
     WebGL: 1
     Windows Store Apps: 1
     XboxOne: 1
