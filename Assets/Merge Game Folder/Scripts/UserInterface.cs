@@ -11,6 +11,8 @@ public class UserInterface : MonoBehaviour
     [SerializeField] private Image _WinhighestFruitImage;
     [SerializeField] private Sprite[] _fruitSprites;
 
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

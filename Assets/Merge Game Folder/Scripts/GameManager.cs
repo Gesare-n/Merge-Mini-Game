@@ -88,6 +88,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ResetGame());
     }
 
+    public void ToDailyRewards()
+    {
+        SceneManager.LoadScene("DailyRewards");
+    }
+
     private IEnumerator ResetGame()
     {
         _gameOverPanel.gameObject.SetActive(true);
