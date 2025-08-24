@@ -6969,13 +6969,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45067c0b674018541a600f6522b22817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameAcitve: 0
   _timeText: {fileID: 34072734}
   _gameOverPanel: {fileID: 1781176519}
   _fadeTime: 2
-  isGameAcitve: 0
   TimeTillGameOver: 1.5
   timeLimit: 150
-  highestFruitIndex: 5
+  highestFruitIndex: 7
+  fruitPrefabs: []
+  nextFruitPrefab: {fileID: 0}
 --- !u!82 &2097197019
 AudioSource:
   m_ObjectHideFlags: 0
