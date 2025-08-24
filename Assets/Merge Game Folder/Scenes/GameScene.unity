@@ -6974,7 +6974,7 @@ MonoBehaviour:
   _fadeTime: 2
   isGameAcitve: 0
   TimeTillGameOver: 1.5
-  timeLimit: 120
+  timeLimit: 150
   highestFruitIndex: 5
 --- !u!82 &2097197019
 AudioSource:
